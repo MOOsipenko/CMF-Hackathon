@@ -110,7 +110,7 @@ for i in range(593):
     
 result = list(result)
 
-result["coeff"] = pd.DataFrame(result)
+result = pd.DataFrame(result, columns={"coeff"})
 ```
 Результат:
 # Картинка6
