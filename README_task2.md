@@ -55,7 +55,7 @@ holidays = cal.holidays(start=dr.min(), end=dr.max())
 new_df['Holiday'] = new_df['date'].isin(holidays)*1
 ```
 Результат:
-# КАРТИНКА 1
+![hackathon_1.png](https://github.com/MOOsipenko/CMF-Hackathon/blob/main/hackathon_1.png)
 
 Далее вычисляем коэффициент `cnt`, который высчитывается как: `partners_cnt` / `orders_cnt` для каждой записи и удалим строки, где `delay_rate == 0`:
 
@@ -64,7 +64,7 @@ new_df['cnt'] = new_df['partners_cnt']/new_df['orders_cnt']
 df_copy = df_copy[df_copy['delivery_area_id'] == 0]
 ```
 Результат:
-# Картинка2
+![hackathon_2.png](https://github.com/MOOsipenko/CMF-Hackathon/blob/main/hackathon_2.png)
 
 После этого построим несколько графиков, из которых увидим, что распределение зависимости коэффициента `cnt` и уровня `delay_rate` примерно одинаково во всех случаях. Пример кода построения графика:
 ```
@@ -76,9 +76,9 @@ ax.set_xlabel("заказы/партнеры", fontsize=14, labelpad=30)
 ax.set_ylabel("delay_rate", fontsize=14, labelpad=30)
 ```
 Построенные графики:
-# Картинка3
-# Картинка4
-# Картинка5
+![hackathon_3.png](https://github.com/MOOsipenko/CMF-Hackathon/blob/main/hackathon_3.png)
+![hackathon_4.png](https://github.com/MOOsipenko/CMF-Hackathon/blob/main/hackathon_4.png)
+![hackathon_5.png](https://github.com/MOOsipenko/CMF-Hackathon/blob/main/hackathon_5.png)
 
 Далее вычисляем коэффициент `coeff`, умножение на который позволит нам найти необходимое количество курьеров для каждой зоны для каждого дня:
 ```
@@ -113,4 +113,4 @@ result = list(result)
 result = pd.DataFrame(result, columns={"coeff"})
 ```
 Результат:
-# Картинка6
+![hackathon_6.png](https://github.com/MOOsipenko/CMF-Hackathon/blob/main/hackathon_6.png)
