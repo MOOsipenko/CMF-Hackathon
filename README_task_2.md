@@ -2,11 +2,9 @@
 Вначале преобразуем данные нам датафреймы так, чтобы они стали более пригодны к анализу и предсказанию:
 ```
 import logging
-logging.getLogger('fbprophet').setLevel(logging.WARNING) 
 import pandas as pd
 import numpy as np
 from matplotlib import pyplot as plt
-from prophet import Prophet
 from pandas.tseries.holiday import USFederalHolidayCalendar as calendar
 from sklearn.linear_model import LinearRegression
 
