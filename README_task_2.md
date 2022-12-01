@@ -53,6 +53,7 @@ holidays = cal.holidays(start=dr.min(), end=dr.max())
 new_df['Holiday'] = new_df['date'].isin(holidays)*1
 ```
 Результат:
+
 ![hackathon_1.png](https://github.com/MOOsipenko/CMF-Hackathon/blob/main/hackathon_1.png)
 
 Далее вычисляем коэффициент `cnt`, который высчитывается как: `partners_cnt` / `orders_cnt` для каждой записи и удалим строки, где `delay_rate == 0`:
@@ -62,6 +63,7 @@ new_df['cnt'] = new_df['partners_cnt']/new_df['orders_cnt']
 df_copy = df_copy[df_copy['delivery_area_id'] == 0]
 ```
 Результат:
+
 ![hackathon_2.png](https://github.com/MOOsipenko/CMF-Hackathon/blob/main/hackathon_2.png)
 
 После этого построим несколько графиков, из которых увидим, что распределение зависимости коэффициента `cnt` и уровня `delay_rate` примерно одинаково во всех случаях. Пример кода построения графика:
@@ -111,4 +113,5 @@ result = list(result)
 result = pd.DataFrame(result, columns={"coeff"})
 ```
 Результат:
+
 ![hackathon_6.png](https://github.com/MOOsipenko/CMF-Hackathon/blob/main/hackathon_6.png)
